@@ -48,7 +48,7 @@ The direction our service pursues can be explained by the following 5 keywords:
     <td style="width: 150px; height: 150px;"><img src="https://avatars.githubusercontent.com/u/152197558?v=4" width="100px" height="100px"></td>
     <td style="width: 150px; height: 150px;"><img src="https://avatars.githubusercontent.com/u/128972768?v=4" width="100px" height="100px"></td>
     <td style="width: 150px; height: 150px;"><img src="https://avatars.githubusercontent.com/u/7882977?v=4" width="100px" height="100px"></td>
-    <td style="width: 150px; height: 150px;"><img src="" width="100px" height="100px"></td>
+    <td style="width: 150px; height: 150px;"><img src="https://avatars.githubusercontent.com/u/171410774?v=4" width="100px" height="100px"></td>
     <td style="width: 150px; height: 150px;"><img src="https://avatars.githubusercontent.com/u/171424016?v=4" width="100px" height="100px"></td>
   </tr>
   <tr align="center">
