@@ -42,22 +42,22 @@ The direction our service pursues can be explained by the following 5 keywords:
 
 
 ## 👨‍👩‍👧‍👦 Collaborators
-<table align="center">
+<table align="center" style="table-layout: fixed; width: 100%; border-collapse: collapse;">
   <tr align="center">
-    <td><img src="https://avatars.githubusercontent.com/u/92345780?v=4" style="width:95%;"></td>
-    <td><img src="https://avatars.githubusercontent.com/u/152197558?v=4" style="width:95%;"></td>
-    <td><img src="https://avatars.githubusercontent.com/u/128972768?v=4" style="width:95%;"></td>
-    <td><img src="https://avatars.githubusercontent.com/u/7882977?v=4" style="width:95%;"></td>
-    <td><img src="https://avatars.githubusercontent.com/u/129071350?v=4" style="width:95%;"></td>
-    <td><img src="https://avatars.githubusercontent.com/u/171424016?v=4" style="width:95%;"></td>
+    <td style="width: 150px; height: 150px;"><img src="https://avatars.githubusercontent.com/u/92345780?v=4" width="100px" height="100px"></td>
+    <td style="width: 150px; height: 150px;"><img src="https://avatars.githubusercontent.com/u/152197558?v=4" width="100px" height="100px"></td>
+    <td style="width: 150px; height: 150px;"><img src="https://avatars.githubusercontent.com/u/128972768?v=4" width="100px" height="100px"></td>
+    <td style="width: 150px; height: 150px;"><img src="https://avatars.githubusercontent.com/u/7882977?v=4" width="100px" height="100px"></td>
+    <td style="width: 150px; height: 150px;"><img src="https://avatars.githubusercontent.com/u/129071350?v=4" width="100px" height="100px"></td>
+    <td style="width: 150px; height: 150px;"><img src="https://avatars.githubusercontent.com/u/171424016?v=4" width="100px" height="100px"></td>
   </tr>
-
   <tr align="center">
-    <td><a href="https://github.com/orieasy1">Jiwon</td>
-    <td><a href="https://github.com/hajinki">Hajin</td>
-    <td><a href="https://github.com/callmeminji">Minji</td>
-    <td><a href="https://github.com/seoha376">Seoha</td>
-    <td><a href="https://gihub.com/sodam2z">Sodam</td>
-    <td><a href="https://github.com/yen2i">Yeeun</td>
+    <td><a href="https://github.com/orieasy1">Jiwon</a></td>
+    <td><a href="https://github.com/hajinki">Hajin</a></td>
+    <td><a href="https://github.com/callmeminji">Minji</a></td>
+    <td><a href="https://github.com/seoha376">Seoha</a></td>
+    <td><a href="https://github.com/sodam2z">Sodam</a></td>
+    <td><a href="https://github.com/yen2i">Yeeun</a></td>
   </tr>
 </table>
+
