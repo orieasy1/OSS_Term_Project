@@ -21,7 +21,7 @@ The direction our service pursues can be explained by the following 5 keywords:
 
 ## Tech Stack
 ### Language & Framework
-![java]("https://img.shields.io/badge/java-007396?style=for-the-badge&logo=OpenJDK&logoColor=white")
+![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
 ![SpringBoot](https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
 ![Thymeleaf](https://img.shields.io/badge/thymeleaf-005F0F?style=for-the-badge&logo=thymeleaf&logoColor=white)
 ![gradle](https://img.shields.io/badge/gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white)
@@ -45,11 +45,11 @@ The direction our service pursues can be explained by the following 5 keywords:
 <table align="center">
   <tr align="center">
     <td><img src="https://avatars.githubusercontent.com/u/92345780?v=4" style="width:95%;"></td>
-    <td><img src="https://avatars.githubusercontent.com/u/156926628?v=4" style="width:95%;"></td>
+    <td><img src="https://avatars.githubusercontent.com/u/152197558?v=4" style="width:95%;"></td>
+    <td><img src="https://avatars.githubusercontent.com/u/128972768?v=4" style="width:95%;"></td>
+    <td><img src="https://avatars.githubusercontent.com/u/7882977?v=4" style="width:95%;"></td>
     <td><img src="https://avatars.githubusercontent.com/u/129071350?v=4" style="width:95%;"></td>
-    <td><img src="https://avatars.githubusercontent.com/u/156886769?v=4" style="width:95%;"></td>
-    <td><img src="https://avatars.githubusercontent.com/u/129071350?v=4" style="width:95%;"></td>
-    <td><img src="https://avatars.githubusercontent.com/u/156886769?v=4" style="width:95%;"></td>
+    <td><img src="https://avatars.githubusercontent.com/u/171424016?v=4" style="width:95%;"></td>
   </tr>
 
   <tr align="center">
@@ -57,7 +57,7 @@ The direction our service pursues can be explained by the following 5 keywords:
     <td><a href="https://github.com/hajinki">Hajin</td>
     <td><a href="https://github.com/callmeminji">Minji</td>
     <td><a href="https://github.com/seoha376">Seoha</td>
-    <td><a href="https://github.com/sodam2z">Sodam</td>
+    <td><a href="https://avatars.githubusercontent.com/u/171410774?v=4">Sodam</td>
     <td><a href="https://github.com/yen2i">Yeeun</td>
   </tr>
 </table>
