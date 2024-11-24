@@ -57,7 +57,7 @@ The direction our service pursues can be explained by the following 5 keywords:
     <td><a href="https://github.com/hajinki">Hajin</td>
     <td><a href="https://github.com/callmeminji">Minji</td>
     <td><a href="https://github.com/seoha376">Seoha</td>
-    <td><a href="https://avatars.githubusercontent.com/u/171410774?v=4">Sodam</td>
+    <td><a href="https://gihub.com/sodam2z">Sodam</td>
     <td><a href="https://github.com/yen2i">Yeeun</td>
   </tr>
 </table>
