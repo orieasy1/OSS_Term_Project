@@ -40,6 +40,7 @@ The direction our service pursues can be explained by the following 5 keywords:
 ![github](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)
 ![notion](https://img.shields.io/badge/notion-000000?style=for-the-badge&logo=notion&logoColor=white)
 
+<br>
 
 ## 👨‍👩‍👧‍👦 Collaborators
 <table align="center" style="table-layout: fixed; width: 100%; border-collapse: collapse;">
