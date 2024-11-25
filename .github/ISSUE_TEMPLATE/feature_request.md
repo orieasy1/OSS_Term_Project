@@ -7,26 +7,26 @@ assignees: ''
 
 ---
 
-## ✨ 이슈 체크리스트
+## ✨ Issue Checklist
 
-- [x] 이슈 제목: [Feature] '기능 내용 상세'
-- [ ] Assignees, Label을 붙여주세요.
+- [x] Issue Title: [Feature] 'Detailed feature description'
+- [ ] Add Assignees and Labels.
 
-## 📄 기능 개요
+## 📄 Feature Overview
 
-- 추가할 기능 요약 설명
+- A brief summary of the feature to be added.
 
-## 📝 기능 상세 내용
+## 📝 Detailed Feature Description
 
-- 구현 관련 상세 내용 작성
+- Write detailed implementation information related to the feature.
 
 ## ✅ TODO
 
-<!-- 이슈를 태깅하셔도 됩니다! -->
+<!-- You can also tag this issue! -->
 
-- [ ] 이거 하려면 이런 걸 해야해
-- [ ] 이것도 해야할 것 같아
+- [ ] To implement this, we need to do the following:
+- [ ] This might also need to be addressed.
 
-## 📍 레퍼런스
+## 📍 References
 
-<!-- 참고할 레퍼런스가 있다면 작성해 주세요. -->
+<!-- Include any references if applicable. -->

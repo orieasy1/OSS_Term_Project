@@ -1,28 +1,28 @@
 ---
 name: Bug report
 about: Create a report to help us improve
-title: "\U0001F6A8 [Bug] "
+title: "🚨 [Bug] "
 labels: ''
 assignees: ''
 
 ---
 
-## 🚨 이슈 체크리스트
+## 🚨 Issue Checklist
 
-- [x] 이슈 제목: [BUG] '버그 내용 상세'
-- [ ] Assignees, Label을 붙여주세요.
+- [x] Issue Title: [BUG] 'Detailed bug description'
+- [ ] Add Assignees and Labels.
 
-## 🐛 버그 개요
+## 🐛 Bug Overview
 
-- 이런 버그가 발생했습니다.
+- This bug has occurred.
 
-## 🐞 버그 상세 내용
+## 🐞 Detailed Bug Description
 
-- 그래서 이런 문제가 발생합니다.
-- 이런 식으로 재현이 돼
-- 이 파일 or 코드에서 문제가 발생한 거 같아
+- This causes the following issues:
+- Steps to reproduce the bug:
+- The problem seems to occur in this file or code section.
 
 ## ✅ TODO
 
-- [ ] 이거 하려면 이런 걸 해야해
-- [ ] 이것도 해야할 것 같아
+- [ ] To fix this, we need to do the following:
+- [ ] Also, this task might be required.

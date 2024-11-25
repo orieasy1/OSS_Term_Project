@@ -1,32 +1,32 @@
 ---
 name: Refactoring template
-about: Refactoring project
+about: Refactor a part of the project
 title: "♻️ [Refactor]"
 labels: ''
 assignees: ''
 
 ---
 
-## ♻️ 이슈 체크리스트
+## ♻️ Issue Checklist
 
-- [x] 이슈 제목: [Refactor] '리팩토링 내용 상세'
-- [ ] Assignees, Label을 붙여주세요.
+- [x] Issue Title: [Refactor] 'Detailed description of refactoring'
+- [ ] Add Assignees and Labels.
 
-## 📄 리팩토링 개요
+## 📄 Refactoring Overview
 
-- 리팩토링 내용 요약 설명
+- A brief summary of the refactoring content.
 
-## 📝 리팩토링 상세 내용
+## 📝 Detailed Refactoring Description
 
-- 리팩토링 관련 상세 내용 작성
+- Write detailed information related to the refactoring process.
 
 ## ✅ TODO
 
-<!-- 이슈를 태깅하셔도 됩니다! -->
+<!-- You can also tag this issue! -->
 
-- [ ] 이거 하려면 이런 걸 해야해
-- [ ] 이것도 해야할 것 같아
+- [ ] To complete this, we need to do the following:
+- [ ] This might also need to be considered.
 
-## 📍 레퍼런스
+## 📍 References
 
-<!-- 참고할 레퍼런스가 있다면 작성해 주세요. -->
+<!-- Include any references if applicable. -->

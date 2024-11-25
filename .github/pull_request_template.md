@@ -1,53 +1,52 @@
-## ✅ 풀\_리퀘스트 체크리스트
+## ✅ Pull Request Checklist
 
 <!--
-하나씩 확인 후 체크박스에 표시해주세요.
+Please review and check each item before submission.
 -->
 
-- [x] PR 제목: [Feature/Fix/Refactor...] 작업 내용 한 줄 요약 (브랜치 이름) #이슈번호
-- [ ] commit message 가 적절한지 확인해주세요.
-- [ ] 적절한 branch 로 요청했는지 확인해주세요.
-- [ ] Assignees, Label 을 붙여주세요.
-- [ ] 주의 사항과 관련해 꼭 확인해야 할 사람이 있다면 Reviewer 로 등록해주세요.
-- [ ] PR이 승인된 경우 해당 브랜치는 삭제해 주세요!
+- [x] PR Title: [Feature/Fix/Refactor...] Brief summary of the work (branch name) #IssueNumber
+- [ ] Verify that the commit messages are appropriate.
+- [ ] Confirm that the request is made to the correct branch.
+- [ ] Add Assignees and Labels.
+- [ ] If there is someone who needs to review specific details, add them as a Reviewer.
+- [ ] After the PR is approved, delete the branch.
 
 <br/>
 
-## 🔄 변경 사항
+## 🔄 Changes
 
-<!-- 해당 pr에서 작업한 내역을 적어주세요. 처음엔 간단하게 요약, list 형식으로 세부사항 작성 -->
+<!-- Provide a summary of the changes made in this PR. Use a list for detailed explanations. -->
 
-무엇을 합니다!
+This PR does the following:
 
-- 이 일을 했다!
-- 이 일도 했다!
-
-<br/>
-
-## 📎 변경한 이유
-
-- 이러한 이유 때문에 변경했습니다!
+- Did this!
+- Also did that!
 
 <br/>
 
-<!-- 관련되어있는 Issue Number 를 작성하세요! 해당 이슈를 이곳에 적으면 pr merge 이후 해당 이슈는 자동으로 close 됩니다. -->
+## 📎 Reason for Changes
 
-closes: #Issue Number
-
-## 👨🏻‍💻 테스트 체크리스트
-
-<!-- 테스트 사항이 있다면 작성해 주세요! -->
-
-- 이러한 테스트를 했어요!
+- These changes were made for the following reasons!
 
 <br/>
 
-## 📌 변경 및 주의 사항
+<!-- Write the related Issue Number. Once the PR is merged, the issue will automatically close. -->
+
+closes: #IssueNumber
+
+## 👨🏻‍💻 Test Checklist
+
+<!-- If there are test cases, write them here. -->
+
+- Performed these tests!
+
+<br/>
+
+## 📌 Additional Changes or Important Notes
 
 <!--
-변경사항 및 주의 사항이 있다면 적어주세요.
-주의 사항과 관련해 꼭 확인해야 할 사람이 있다면 리뷰어로 등록해주세요. (다른 사람이 작성한 코드 수정 등)
-코드 리뷰 시 더 꼼꼼하게 확인 받고 싶은 부분이 있다면 적어주세요.
+If there are any additional changes or notes, please describe them here.
+If specific parts of the code require more detailed review, mention them here.
 -->
 
 <br/>
