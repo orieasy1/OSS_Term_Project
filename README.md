@@ -13,11 +13,11 @@ Time To-Do helps users organize their goals, track progress, and visualize achie
 
 The direction our service pursues can be explained by the following 5 keywords: 
 **Productivity Boost**, **Goal Visualization**, **Habit Building**, **Openness and Collaboration**, and **Achievement & Growth**.
-
 <br>
 
 ### 🤸 Target Users
 Ideal for students, professionals, and anyone looking to improve productivity.
+<br>
 
 ### 👩‍💻 Main Features
 #### ☑️ To-do List Management
