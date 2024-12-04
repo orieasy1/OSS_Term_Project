@@ -22,6 +22,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
@@ -44,26 +45,20 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        // CSRF 설정
-        http.securityContext(securityContext ->
-                securityContext.requireExplicitSave(false) // SecurityContext를 명시적으로 저장하지 않음
-        );
+        // CSRF 설정 비활성화
+        http.csrf(csrf -> csrf.disable());
 
-        // 세션 관리 Stateless로 설정
-        http.securityContext(securityContext ->
-                securityContext.requireExplicitSave(false)
-        ).sessionManagement(session ->
-                session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-        );
+        // 세션 Stateless 설정
+        http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
         // HTTP Basic 및 Form 로그인 비활성화
-        http.httpBasic(httpBasic -> {}).formLogin(formLogin -> {});
+        http.httpBasic(httpBasic -> {}).formLogin(formLogin -> formLogin.disable());
 
         // URL별 권한 설정
         http.authorizeHttpRequests(auth -> auth
-                .requestMatchers("/swagger-ui/**", "/v3/api-docs/**", "/error").permitAll() // Swagger 및 공개 URL 허용
-                .requestMatchers("/oauth2/**").permitAll() // OAuth2 로그인 허용
-                .requestMatchers("/api/**").authenticated() // API 경로는 인증 필요
+                .requestMatchers("/swagger-ui/**", "/v3/api-docs/**", "/error", "/login" ,"/user").permitAll()
+                .requestMatchers("/oauth2/**").permitAll()
+                .requestMatchers("/api/**").authenticated()
                 .anyRequest().permitAll()
         );
 
@@ -87,8 +82,8 @@ public class SecurityConfig {
                 .deleteCookies("JSESSIONID"));
 
         // API 인증 실패 시 예외 처리
-        http.exceptionHandling(exception ->
-                exception.defaultAuthenticationEntryPointFor(
+        http.exceptionHandling(exception -> exception
+                .defaultAuthenticationEntryPointFor(
                         new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED),
                         new AntPathRequestMatcher("/api/**"))
         );
