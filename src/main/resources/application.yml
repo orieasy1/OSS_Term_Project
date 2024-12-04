@@ -1,6 +1,11 @@
 spring:
   profiles:
     active: dev
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    enabled: true
+
 springdoc:
   packages-to-scan: com.team3.ossproject
   default-consumes-media-type: application/json;charset=UTF-8

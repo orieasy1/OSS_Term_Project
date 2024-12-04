@@ -24,11 +24,12 @@ public class UserController {
         return "signup";
     }
 
-    @PostMapping()
+    @PostMapping
     @Operation(summary = "User Registration", description = "Process user registration and save user information.")
     public String register(AddUserRequest request) {
         userService.save(request);
-        return "redirect:/login";
+        return "redirect:/api/v1/auth/oauth2/google";
+
     }
 
 }

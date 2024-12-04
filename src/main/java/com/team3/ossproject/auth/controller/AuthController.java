@@ -15,12 +15,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Tag(name = "Token", description = "Token API")
 @RequiredArgsConstructor
-@RestController
-@RequestMapping("api/v1/auth")
+@Controller
+@RequestMapping("/api/v1/auth")
 public class AuthController {
 
     private final TokenService tokenService;
@@ -35,7 +36,8 @@ public class AuthController {
     @GetMapping("/logout")
     public String logout(HttpServletRequest request, HttpServletResponse response) {
         new SecurityContextLogoutHandler().logout(request, response, SecurityContextHolder.getContext().getAuthentication());
-        return "redirect:/login";
+        return "redirect:/api/v1/auth/oauth2/google";
+
     }
 
     @PostMapping("/token")

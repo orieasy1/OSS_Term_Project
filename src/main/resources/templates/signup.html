@@ -20,7 +20,7 @@
                 <p class="text-white-50 mt-2 mb-5">Please sign up with your Google Acount.</p>
 
                 <div class = "mb-2">
-                    <form th:action="@{/user}" method="POST">
+                    <form th:action="@{/api/v1/users}" method="POST">
                         <!-- 토큰을 추가하여 CSRF 공격 방지 -->
                         <input type="hidden" th:name="${_csrf?.parameterName}" th:value="${_csrf?.token}" />
                         <div class="mb-3">
