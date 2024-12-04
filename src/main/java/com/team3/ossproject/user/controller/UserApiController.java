@@ -1,4 +1,4 @@
-package com.team3.ossproject.auth.controller;
+package com.team3.ossproject.user.controller;
 
 import com.team3.ossproject.user.dto.AddUserRequest;
 import com.team3.ossproject.user.service.UserService;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @RequiredArgsConstructor
 @Controller
-public class AuthApiController {
+public class UserApiController {
 
     private final UserService userService;
 

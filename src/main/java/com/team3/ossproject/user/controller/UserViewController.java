@@ -1,10 +1,10 @@
-package com.team3.ossproject.auth.controller;
+package com.team3.ossproject.user.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class AuthViewController {
+public class UserViewController {
 
     @GetMapping("/login")
     public String login() {
