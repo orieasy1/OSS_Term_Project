@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: dev
+springdoc:
+  packages-to-scan: com.team3.ossproject
+  default-consumes-media-type: application/json;charset=UTF-8
+  default-produces-media-type: application/json;charset=UTF-8
+  swagger-ui:
+    path: /
+    disable-swagger-default-url: true
+    display-request-duration: true
+    operations-sorter: alpha
+server:
+  port: 8080
