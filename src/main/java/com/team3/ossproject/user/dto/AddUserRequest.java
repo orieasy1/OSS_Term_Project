@@ -9,6 +9,5 @@ import lombok.Setter;
 @Schema(description = "User Information DTO")
 public class AddUserRequest {
     private String email;
-    private String password;
     private String nickname;
 }
