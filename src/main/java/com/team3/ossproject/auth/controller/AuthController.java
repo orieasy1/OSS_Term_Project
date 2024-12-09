@@ -27,7 +27,7 @@ public class AuthController {
     private final TokenService tokenService;
 
     @GetMapping("/oauth2/google")
-    @Operation(summary = "Google Login", description = "Handle Login by Google")
+    @Operation(summary = "Google Login", description = "[View] Display the Google login page for users")
     @ApiErrorExceptionsExample(LoginAuthExceptionDocs.class)
     public String login() {
         return "login";
