@@ -19,7 +19,7 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping("/signup")
-    @Operation(summary = "Sign up page", description = "Display the sign-up page for new users")
+    @Operation(summary = "Sign up page", description = "[View] Display the sign-up page for new users")
     public String signup() {
         return "signup";
     }
