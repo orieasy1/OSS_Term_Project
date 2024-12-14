@@ -1,5 +1,6 @@
 package com.team3.ossproject.user.domain;
 
+import com.team3.ossproject.todolist.domain.Task;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -30,11 +31,15 @@ public class User implements UserDetails {
     @Column(name = "nickname", unique = true)
     private String nickname;
 
+    @OneToMany(mappedBy = "users")
+    private List<Task> tasks;
+
     @Builder
-    public User(String email, String password, String nickname) {
+    public User(String email, String password, String nickname, List<Task> tasks) {
         this.email = email;
         this.password = password;
         this.nickname = nickname;
+        this.tasks = tasks;
     }
 
     public User update(String nickname) {
