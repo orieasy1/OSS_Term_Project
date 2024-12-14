@@ -10,7 +10,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public enum Status {
     PENDING,
-    IN_PROGRESS,
+    MEDIUM,
     COMPLETED;
 
 
