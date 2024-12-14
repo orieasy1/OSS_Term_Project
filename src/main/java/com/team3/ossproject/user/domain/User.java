@@ -1,5 +1,6 @@
 package com.team3.ossproject.user.domain;
 
+import com.team3.ossproject.challenge.domain.Challenge;
 import com.team3.ossproject.todolist.domain.Task;
 import jakarta.persistence.*;
 import lombok.*;
@@ -31,8 +32,11 @@ public class User implements UserDetails {
     @Column(name = "nickname", unique = true)
     private String nickname;
 
-    @OneToMany(mappedBy = "users")
+    @OneToMany(mappedBy = "user")
     private List<Task> tasks;
+
+    @OneToMany(mappedBy = "user")
+    private List<Challenge> challenges;
 
     @Builder
     public User(String email, String password, String nickname) {

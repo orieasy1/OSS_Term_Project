@@ -1,7 +1,6 @@
 package com.team3.ossproject.challenge.domain;
 
 import com.team3.ossproject.common.entity.BaseEntity;
-import com.team3.ossproject.user.domain.User;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -17,7 +16,7 @@ import java.time.LocalDateTime;
 public class ChallengeProcess extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "task_id")
+    @Column(name = "process_id")
     private Long processId;
 
     @Column(nullable = false)
