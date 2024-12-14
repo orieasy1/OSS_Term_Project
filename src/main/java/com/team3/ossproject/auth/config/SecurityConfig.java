@@ -62,7 +62,10 @@ public class SecurityConfig {
                         "/error",
                         "/api/v1/auth/**" ,
                         "/api/v1/users",
-                        "/api/v1/users/signup").permitAll()
+                        "/api/v1/users/signup",
+                        "/api/v1/todolist/**",
+                        "/api/v1/challenge/**",
+                        "/api/v1/calendar/**").permitAll()
                 .requestMatchers("/oauth2/**").permitAll()
                 .requestMatchers("/api/**").authenticated()
                 .anyRequest().permitAll()
