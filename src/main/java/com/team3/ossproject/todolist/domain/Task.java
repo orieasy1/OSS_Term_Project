@@ -29,6 +29,9 @@ public class Task extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private Status status;
 
+    @Enumerated(EnumType.STRING)
+    private Priority priority;
+
     @Column(name = "completed_at")
     private LocalDateTime completedAt;
 
