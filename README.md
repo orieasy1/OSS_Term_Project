@@ -12,57 +12,51 @@ It allows users to systematically manage their objectives and visualize their ac
 Time To-Do helps users organize their goals, track progress, and visualize achievements in a way that fosters productivity and personal growth.
 
 The direction our service pursues can be explained by the following 5 keywords: 
-**Productivity Boost**, **Goal Visualization**, **Habit Building**, **Openness and Collaboration**, and **Achievement & Growth**.
-
-<br>
-
+**Productivity Boost**, **Goal Visualization**, **Habit Building**, **Openness and Collaboration**, and **Achievement & Growth**.<br><br>
+ 
 ### 🤸 Target Users
-Ideal for students, professionals, and anyone looking to improve productivity.
+Ideal for students, professionals, and anyone looking to improve productivity.<br><br>
 
 ### 👩‍💻 Main Features
-#### ☑️ To-do List Management
+- **☑️ To-do List Management**
+    - **Set and Track Goals**:
+        - Create daily, weekly, and monthly goals with title, description, and due date (yyyy-mm-dd).
+        - Assign priority levels (High, Medium, Low).
+    - **Check Goal Completion**:
+        - Mark goals as completed and track completion status with color indicators:
+            - **Green**: Completed goals.
+            - **Red**: Overdue goals.
+        - Record completion date and time. <br>
 
-- **Set and Track Goals**:
-    - Create daily, weekly, and monthly goals with title, description, and due date (yyyy-mm-dd).
-    - Assign priority levels (High, Medium, Low).
-- **Check Goal Completion**:
-    - Mark goals as completed and track completion status with color indicators:
-        - **Green**: Completed goals.
-        - **Red**: Overdue goals.
-    - Record completion date and time. <br><br>
+- **🏆 Challenge Feature**
+    - **50-day and 100-day Challenges**:
+        - Create and manage challenges with title, description, and start date (yyyy-mm-dd).
+        - Visualize success rates to maintain motivation.
+    - **Track Progress**:
+        - Display progress as a percentage bar (%) or milestone stages (e.g., 3/10).
+        - Show elapsed days and remaining days.
+    - **Control Challenges**:
+        - Pause or end challenges at any time. <br>
 
-#### 🏆 Challenge Feature
+- **🗓️ Calendar Visualization**
+    - **Goal Achievement Records**:
+        - Automatically save completed goals to the calendar.
+        - Use colors or icons to display status:
+            - **Green**: Completed.
+            - **Red**: Uncompleted.
+            - **Gray**: Overdue.
+    - **Visual Achievement Overview**:
+        - Click on specific dates to view detailed goal lists and descriptions via pop-ups. <br>
 
-- **50-day and 100-day Challenges**:
-    - Create and manage challenges with title, description, and start date (yyyy-mm-dd).
-    - Visualize success rates to maintain motivation.
-- **Track Progress**:
-    - Display progress as a percentage bar (%) or milestone stages (e.g., 3/10).
-    - Show elapsed days and remaining days.
-- **Control Challenges**:
-    - Pause or end challenges at any time. <br><br>
+- **📈 Achievement Rate Graphs**
+    - **Analyze Goal Completion Rates**:
+        - Visualize weekly/monthly success rates with graphs.
+        - Calculate completion rate: (Completed Goals / Total Goals) × 100%.
+    - **Track Trends**:
+        - Compare progress with previous months.
+        - Highlight trends with **up (↑)** or **down (↓)** icons.
 
-#### 🗓️ Calendar Visualization
-
-- **Goal Achievement Records**:
-    - Automatically save completed goals to the calendar.
-    - Use colors or icons to display status:
-        - **Green**: Completed.
-        - **Red**: Uncompleted.
-        - **Gray**: Overdue.
-- **Visual Achievement Overview**:
-    - Click on specific dates to view detailed goal lists and descriptions via pop-ups. <br><br>
-
-### 📈 Achievement Rate Graphs
-
-- **Analyze Goal Completion Rates**:
-    - Visualize weekly/monthly success rates with graphs.
-    - Calculate completion rate: (Completed Goals / Total Goals) × 100%.
-- **Track Trends**:
-    - Compare progress with previous months.
-    - Highlight trends with **up (↑)** or **down (↓)** icons.
-
-<br>
+<br><br>
 
 ## 🛠️ Tech Stack
 ### Language & Framework
@@ -85,7 +79,7 @@ Ideal for students, professionals, and anyone looking to improve productivity.
 ![github](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)
 ![notion](https://img.shields.io/badge/notion-000000?style=for-the-badge&logo=notion&logoColor=white)
 
-<br>
+<br><br>
 
 ## 👨‍👩‍👧‍👦 Collaborators
 <table align="center" style="table-layout: fixed; width: 100%; border-collapse: collapse;">
