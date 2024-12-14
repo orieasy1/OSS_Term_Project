@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Task extends BaseEntity {
@@ -52,6 +53,7 @@ public class Task extends BaseEntity {
                 String description,
                 Type type,
                 Status status,
+                Priority priority,
                 LocalDateTime completedAt,
                 int day,
                 int week,
@@ -61,6 +63,7 @@ public class Task extends BaseEntity {
         this.description = description;
         this.type = type;
         this.status = status;
+        this.priority = priority;
         this.completedAt = completedAt;
         this.day = day;
         this.week = week;

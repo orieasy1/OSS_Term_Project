@@ -32,7 +32,7 @@ public enum TaskErrorCode implements BaseErrorCode {
     INVALID_PRIORITY(BAD_REQUEST.value(), "TASK_400_5", "The priority is invalid."),
 
     @ExplainError("Occurs when the task status update is invalid.")
-    INVALID_STATUS_UPDATE(BAD_REQUEST.value(), "TASK_400_10", "Invalid task status update."),
+    INVALID_STATUS(BAD_REQUEST.value(), "TASK_400_10", "Invalid task status update."),
 
     @ExplainError("Occurs when an invalid Task ID is provided.")
     INVALID_TASK_ID(BAD_REQUEST.value(), "TASK_400_3", "The Task ID must be a positive integer."),
