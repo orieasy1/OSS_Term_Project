@@ -35,11 +35,10 @@ public class User implements UserDetails {
     private List<Task> tasks;
 
     @Builder
-    public User(String email, String password, String nickname, List<Task> tasks) {
+    public User(String email, String password, String nickname) {
         this.email = email;
         this.password = password;
         this.nickname = nickname;
-        this.tasks = tasks;
     }
 
     public User update(String nickname) {
