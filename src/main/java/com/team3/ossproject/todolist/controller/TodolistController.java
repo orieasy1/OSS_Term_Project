@@ -23,19 +23,13 @@ public class TodolistController {
     private final TodolistService todolistService;
 
     @PostMapping
-    @Operation(summary = "할일 등록")
+    @Operation(summary = "Add To-do Task")
     public ResponseEntity<StringResponseDto> addTask(
             @RequestBody CreateTaskRequest request){
 
         Long userId = SecurityUtil.getCurrentUserId();
         String title = todolistService.createTodolist(SecurityUtil.getCurrentUserId(), request);
         return ResponseEntity.ok(new StringResponseDto("Todo task" + title + " created Successfully!"));
-    }
-
-    @GetMapping
-    @Operation(summary = "할일 할 일")
-    public String findTask(){
-        return null;
     }
 
 }

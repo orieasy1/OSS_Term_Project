@@ -19,13 +19,17 @@ public enum AuthErrorCode implements BaseErrorCode {
 	TOKEN_EXPIRED(UNAUTHORIZED, "AUTH_401_1", "인증 시간이 만료되었습니다. 인증토큰을 재발급 해주세요"),
 
 	@ExplainError("인증 토큰이 잘못됐을 때 발생하는 오류입니다.")
-	INVALID_TOKEN(UNAUTHORIZED, "AUTH_401_2", "잘못된 토큰입니다. 재 로그인 해주세요"),
+	INVALID_TOKEN(UNAUTHORIZED, "AUTH_401_2", "잘못된 토큰입니다. 재로그인 해주세요"),
+
+	@ExplainError("사용자와 관련된 Refresh Token을 찾지 못했을 때 발생하는 오류입니다.")
+	REFRESH_TOKEN_NOT_FOUND(UNAUTHORIZED, "AUTH_401_3", "사용자와 관련된 Refresh Token이 존재하지 않습니다."),
 
 	@ExplainError("refreshToken 만료시 발생하는 오류입니다.")
-	REFRESH_TOKEN_EXPIRED(FORBIDDEN, "AUTH_403_1", "인증 시간이 만료되었습니다. 재 로그인 해주세요."),
+	REFRESH_TOKEN_EXPIRED(FORBIDDEN, "AUTH_403_1", "인증 시간이 만료되었습니다. 재로그인 해주세요."),
 
 	@ExplainError("헤더에 올바른 accessToken을 담지않았을 때 발생하는 오류(형식 불일치 등)입니다.")
 	ACCESS_TOKEN_NOT_EXIST(FORBIDDEN, "AUTH_403_2", "알맞은 accessToken을 넣어주세요.");
+
 
 	private final Integer status;
 	private final String code;

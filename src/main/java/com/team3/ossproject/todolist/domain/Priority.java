@@ -11,9 +11,9 @@ import java.util.Map;
 
 @RequiredArgsConstructor
 public enum Priority {
-    PENDING,
-    COMPLETED,
-    FAILED;
+    HIGH,
+    MEDIUM,
+    LOW;
 
 
     private static final Map<String, Priority> NAME_TO_ENUM_MAP = new HashMap<>();

@@ -41,7 +41,7 @@ public class AuthController {
     }
 
     @PostMapping("/token")
-    @Operation(summary = "Update AccessTocken", description = "Update AccessToken by Refresh Token")
+    @Operation(summary = "Update AccessToken", description = "Update AccessToken by Refresh Token")
     @ApiErrorExceptionsExample(RefreshAuthExceptionDocs.class)
     public ResponseEntity<CreateAccessTokenResponse> createNewAccessToken(
             @RequestBody CreateAccessTokenRequest request) {

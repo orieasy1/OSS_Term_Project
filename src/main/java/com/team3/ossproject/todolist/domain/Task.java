@@ -58,7 +58,8 @@ public class Task extends BaseEntity {
                 int day,
                 int week,
                 int month,
-                int year) {
+                int year,
+                User user) {
         this.title = title;
         this.description = description;
         this.type = type;
@@ -69,5 +70,6 @@ public class Task extends BaseEntity {
         this.week = week;
         this.month = month;
         this.year = year;
+        this.user = user;
     }
 }
