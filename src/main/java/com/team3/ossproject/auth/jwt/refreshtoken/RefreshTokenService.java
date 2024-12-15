@@ -18,7 +18,7 @@ public class RefreshTokenService {
 
     public RefreshToken findByUser(User user) {
         return refreshTokenRepository.findByUser(user)
-                .orElseThrow(() -> new AuthException(AuthErrorCode.REFRESH_TOKEN_NOT_FOUND));
+                .orElseThrow(() -> new AuthException(AuthErrorCode.TOKEN_NOT_FOUND));
     }
 
     public RefreshToken saveOrUpdate(RefreshToken refreshToken) {
