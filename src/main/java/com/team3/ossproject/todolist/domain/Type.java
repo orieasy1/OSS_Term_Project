@@ -2,6 +2,8 @@ package com.team3.ossproject.todolist.domain;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.team3.ossproject.todolist.exception.TaskErrorCode;
+import com.team3.ossproject.todolist.exception.TaskException;
 import lombok.RequiredArgsConstructor;
 
 import java.util.HashMap;
@@ -32,7 +34,7 @@ public enum Type {
 		Type type = NAME_TO_ENUM_MAP.get(name);
 
 		if (type == null) {
-			//throw new TaskException(TaskErrorCode.INVALID_TYPE_ENUM);
+			throw new TaskException(TaskErrorCode.INVALID_TYPE);
 		}
 
 		return type;

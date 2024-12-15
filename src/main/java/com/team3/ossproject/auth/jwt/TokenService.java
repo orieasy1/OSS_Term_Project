@@ -1,6 +1,8 @@
 package com.team3.ossproject.auth.jwt;
 
 
+import com.team3.ossproject.auth.exception.AuthErrorCode;
+import com.team3.ossproject.auth.exception.AuthException;
 import com.team3.ossproject.auth.jwt.refreshtoken.RefreshTokenService;
 import com.team3.ossproject.user.domain.User;
 import com.team3.ossproject.user.service.UserService;
@@ -18,14 +20,16 @@ public class TokenService {
     private final UserService userService;
 
     public String createNewAccessToken(String refreshToken) {
-        // 토큰 유효성 검사에 실패하면 예외 발생
-        if(!tokenProvider.validToken(refreshToken)) {
-            throw new IllegalArgumentException("Unexpected token");
+        // 토큰 유효성 검사
+        if (!tokenProvider.validToken(refreshToken)) {
+            throw new AuthException(AuthErrorCode.INVALID_TOKEN);
         }
 
-        Long userId = refreshTokenService.findByRefreshToken(refreshToken).getUserId();
-        User user = userService.findById(userId);
+        // RefreshToken에서 User 엔티티 추출
+        User user = refreshTokenService.findByRefreshToken(refreshToken).getUser();
 
+        // 새 AccessToken 생성
         return tokenProvider.generateToken(user, Duration.ofHours(2));
     }
+
 }
