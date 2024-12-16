@@ -1,0 +1,110 @@
+/* 기존 스타일 유지 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F8FAFD;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 메인 컨테이너 스타일 */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+/* 왼쪽 섹션 */
+.left-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 1;
+    padding-left: 50px;
+}
+
+.main-image-container {
+    margin-bottom: 20px;
+}
+
+.main-image {
+    width: 200px;
+    height: auto;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+header #main-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px; /* Welcome 메시지와의 간격 조정 */
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+.user-welcome {
+    font-size: 1.5rem;
+    color: #555;
+    margin: 0; /* 위아래 여백 제거 */
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* 오른쪽 섹션 */
+.right-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.button-container {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 30px;
+    width: 300px;
+}
+
+.button-container button {
+    background-color: #6FD1C5;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 28px 33px; /* 버튼 내부 여백 확대 */
+    font-size: 1.2rem; /* 글씨 크기 확대 */
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.button-container button:hover {
+    background-color: navajowhite;
+    transform: scale(1.05);
+}
+
+/* 푸터 스타일 */
+footer p {
+    font-size: 0.9rem;
+    color: #666;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    margin: 0;
+}

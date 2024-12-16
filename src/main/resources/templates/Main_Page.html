@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time-To-Do Main</title>
+    <link rel="stylesheet" href="Main_Page.css">
+</head>
+<body>
+<!-- 메인 컨테이너 -->
+<div class="main-container">
+    <!-- 왼쪽 섹션: 로고와 환영 문구 -->
+    <div class="left-section">
+        <div class="main-image-container">
+            <img th:src="@{/images/main-image.png}" alt="Time-To-Do Logo" class="main-image">
+        </div>
+        <header>
+            <!-- 사용자 ID를 JavaScript에서 설정 -->
+            <p id="user-welcome" class="user-welcome">Hi, Guest!</p>
+            <h1 id="main-title" class="fade-in">Welcome to "Time-To-Do!"</h1>
+        </header>
+    </div>
+
+    <!-- 오른쪽 섹션: 버튼 -->
+    <div class="right-section">
+        <div class="button-container">
+            <button th:onclick="|window.location.href='@{/todo}'|">To-Do Mode ✔️</button>
+            <button th:onclick="|window.location.href='@{/challenge}'|">Challenge Mode 🎯</button>
+            <button th:onclick="|window.location.href='@{/calendar}'|">Calendar 📆</button>
+            <button th:onclick="|window.location.href='@{/performance}'|">Performance Analysis 📊</button>
+        </div>
+    </div>
+</div>
+
+<!-- 개발자 정보 -->
+<footer>
+    <p>Developers: Lee Ji Won, Hong Min Ji, Song Seo Ha, Lee So Dam, Lee Ye Eun, Kim Ha Jin</p>
+</footer>
+
+<!-- JavaScript 추가 -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // localStorage에서 user 데이터 가져오기
+        const user = JSON.parse(localStorage.getItem("user")) || { id: "guest", nickname: "Guest" };
+
+        // HTML 요소에 사용자 정보 반영
+        const userWelcomeElement = document.getElementById("user-welcome");
+        userWelcomeElement.textContent = `Hi, ${user.nickname}!`;
+    });
+</script>
+</body>
+</html>
