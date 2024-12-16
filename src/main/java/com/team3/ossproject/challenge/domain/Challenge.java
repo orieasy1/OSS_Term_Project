@@ -6,6 +6,7 @@ import com.team3.ossproject.common.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class Challenge extends BaseEntity {
     private String description;
 
     @Column(name = "start_date")
-    private LocalDateTime startDate;
+    private LocalDate startDate;
 
     @Enumerated(EnumType.STRING)
     private Duration duration;
@@ -41,10 +42,10 @@ public class Challenge extends BaseEntity {
     private float progressRate;
 
     @Column(name = "remaining_days", nullable = false)
-    private int remainingDays;
+    private long remainingDays;
 
     @Column(name = "finished_at")
-    private LocalDateTime finishedAt;
+    private LocalDate finishedAt;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="user_id", nullable = false)
@@ -56,13 +57,13 @@ public class Challenge extends BaseEntity {
     @Builder
     public Challenge(String title,
                 String description,
-                LocalDateTime startDate,
+                LocalDate startDate,
                 Duration duration,
                 Status status,
                 int count,
                 float progressRate,
-                int remainingDays,
-                LocalDateTime finishedAt) {
+                long remainingDays,
+                LocalDate finishedAt) {
         this.title = title;
         this.description = description;
         this.duration = duration;

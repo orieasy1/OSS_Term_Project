@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import static com.team3.ossproject.global.consts.TimetodoStatic.*;
+import static org.springframework.http.HttpStatus.UNPROCESSABLE_ENTITY;
 
 @Getter
 @AllArgsConstructor
@@ -28,7 +29,11 @@ public enum ChallengeErrorCode implements BaseErrorCode {
     NEGATIVE_REMAINING_DAYS(BAD_REQUEST, "CHALLENGE_400_4", "남은 일 수가 음수일 수 없습니다."),
 
     @ExplainError("챌린지의 Duration 값이 잘못된 형식일 때 발생하는 오류입니다.")
-    INVALID_CHALLENGE_DURATION(BAD_REQUEST, "CHALLENGE_400_5", "챌린지의 Duration 값이 유효하지 않습니다.");;
+    INVALID_CHALLENGE_DURATION(BAD_REQUEST, "CHALLENGE_400_5", "챌린지의 Duration 값이 유효하지 않습니다."),
+
+    @ExplainError("Occurs when attempting to register a task for a past date.")
+    PAST_DATE_NOT_ALLOWED(UNPROCESSABLE_ENTITY.value(), "TASK_422_1", "Tasks cannot be registered for past dates.");
+
 
     private final Integer status;
     private final String code;
