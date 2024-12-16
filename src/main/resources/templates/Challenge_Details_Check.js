@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const challengeId = localStorage.getItem("challenge_id");
     if (!challengeId) {
-        alert("챌린지를 선택하지 않았습니다.");
+        alert("You didn't select a challenge.");
         return;
     }
 
