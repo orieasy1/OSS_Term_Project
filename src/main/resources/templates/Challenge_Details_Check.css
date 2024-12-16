@@ -1,0 +1,114 @@
+/* 전체 페이지 스타일 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F8FAFD;
+}
+
+/* 홈 버튼 스타일 */
+header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+#homeButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #6FD1C5;
+    color: #FFF;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#homeButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 메인 컨테이너: 왼쪽과 오른쪽 배치 */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 80px auto 20px;
+    padding: 0 20px;
+}
+
+.left-section {
+    text-align: left;
+    flex: 1;
+}
+
+.left-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.left-section h1 {
+    font-size: 3rem;
+    color: #6FD1C5;
+    margin: 10px 0;
+}
+
+.right-section {
+    text-align: right;
+    flex: 1;
+}
+
+.right-section p {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 5px 0;
+}
+
+.challenge-days {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #444;
+}
+
+.challenge-dates {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #555;
+}
+
+/* 챌린지 일별 버튼 스타일 */
+.challenge-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.challenge-box {
+    background-color: #FFFFFF;
+    border: 2px solid #DDDDDD;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.challenge-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.challenge-box.checked {
+    background-color: #6FD1C5;
+    color: #FFFFFF;
+}

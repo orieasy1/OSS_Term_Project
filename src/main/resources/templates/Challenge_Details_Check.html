@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Page</title>
+    <link rel="stylesheet" href="Challenge_Details_Check.css">
+</head>
+<body>
+<!-- 홈 버튼 -->
+<header>
+    <button id="homeButton" th:onclick="|location.href='@{/home}'|">Home</button>
+</header>
+
+<!-- 메인 컨테이너 -->
+<main class="main-container">
+    <!-- 왼쪽 섹션: 챌린지 제목과 D-Day -->
+    <div class="left-section">
+        <h2 id="challengeTitle" th:text="${challengeTitle}">Your Challenge</h2>
+        <h1 id="remainingDays" th:text="'D - ' + ${remainingDays}">D - N/A</h1>
+    </div>
+
+    <!-- 오른쪽 섹션: 챌린지 기간과 날짜 -->
+    <div class="right-section">
+        <p>
+            The <span class="challenge-days" id="challengeDays" th:text="${totalDays + ' days'}">50 days</span> challenge
+        </p>
+        <p>
+            from <span class="challenge-dates" id="startDate" th:text="${startDate}">N/A</span>
+        </p>
+        <p>
+            to <span class="challenge-dates" id="endDate" th:text="${endDate}">N/A</span>
+        </p>
+    </div>
+</main>
+
+<!-- 챌린지 일별 버튼 -->
+<div class="challenge-container" id="challenge-container">
+    <!-- 타임리프 반복문으로 버튼 생성 -->
+    <div th:each="day, status : ${dayStatuses}" class="challenge-box"
+         th:classappend="${status.isCompleted} ? 'checked' : ''"
+         th:text="'DAY ' + ${day}">
+    </div>
+</div>
+
+</body>
+</html>
