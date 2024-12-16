@@ -5,6 +5,11 @@ import com.team3.ossproject.todolist.domain.Status;
 import com.team3.ossproject.todolist.domain.Task;
 import com.team3.ossproject.todolist.domain.Type;
 import com.team3.ossproject.todolist.dto.request.CreateTaskRequest;
+import com.team3.ossproject.todolist.dto.request.TaskUpdateRequest;
+import com.team3.ossproject.todolist.dto.response.TaskResponse;
+import com.team3.ossproject.todolist.dto.response.TaskUpdateResponse;
+import com.team3.ossproject.todolist.exception.TaskErrorCode;
+import com.team3.ossproject.todolist.exception.TaskException;
 import com.team3.ossproject.todolist.repository.TaskRepository;
 import com.team3.ossproject.user.domain.User;
 import com.team3.ossproject.user.exception.UserErrorCode;
@@ -13,6 +18,9 @@ import com.team3.ossproject.user.repository.UserRepository;
 import jdk.jshell.spi.ExecutionControl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -49,4 +57,96 @@ public class TodolistService {
 
         return savedTask.getTitle();
     }
+
+    public TaskResponse getTodolist(Type type, int year, int month, int week, int day, Long userId) {
+        // userId로 User 엔티티 조회
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new UserException(UserErrorCode.USER_NOT_FOUND));
+
+        List<Task> tasks;
+
+        if (type == Type.DAY) {
+            tasks = taskRepository.findByYearAndMonthAndDay(year, month, day);
+        } else if (type == Type.WEEK) {
+            tasks = taskRepository.findByYearAndMonthAndWeek(year, month, week);
+        } else if (type == Type.MONTH) {
+            tasks = taskRepository.findByYearAndMonth(year, month);
+        } else {
+            throw new TaskException(TaskErrorCode.INVALID_TYPE);
+        }
+
+        if (tasks.isEmpty()) {
+            throw new TaskException(TaskErrorCode.TASK_NOT_FOUND);
+        }
+
+        return TaskResponse.builder()
+                .type(type.getName())
+                .todoat(type == Type.DAY ? day : (type == Type.WEEK ? week : month))
+                .todolist(tasks.stream()
+                        .map(task -> TaskResponse.Todolist.builder()
+                                .title(task.getTitle())
+                                .description(task.getDescription())
+                                .status(task.getStatus().name())
+                                .priority(task.getPriority().name())
+                                .build())
+                        .collect(Collectors.toList()))
+                .build();
+    }
+
+    public TaskUpdateResponse updateTask(Type type, Long taskId, TaskUpdateRequest request) {
+        Task task = getTaskByIdOrThrow(taskId);
+
+        if (!task.getType().equals(type)) {
+            throw new TaskException(TaskErrorCode.INVALID_TYPE);
+        }
+
+        task.setTitle(request.getTitle());
+        task.setDescription(request.getDescription());
+        task.setPriority(Priority.fromName(request.getPriority()));
+
+        Task updatedTask = taskRepository.save(task);
+
+        return TaskUpdateResponse.builder()
+                .taskId(updatedTask.getTaskId())
+                .title(updatedTask.getTitle())
+                .description(updatedTask.getDescription())
+                .priority(updatedTask.getPriority().getName())
+                .updatedAt(updatedTask.getUpdatedAt())
+                .build();
+    }
+
+    public void deleteTask(Long taskId, Long userId) {
+        Task task = getTaskByIdOrThrow(taskId);
+
+        if (!task.getUser().getId().equals(userId)) {
+            throw new TaskException(TaskErrorCode.UNAUTHORIZED_ACCESS);
+        }
+
+        taskRepository.delete(task);
+    }
+
+    public TaskUpdateResponse updateTaskStatus(Long taskId, Status status) {
+        if (status == null) {
+            throw new TaskException(TaskErrorCode.INVALID_STATUS);
+        }
+
+        Task task = getTaskByIdOrThrow(taskId);
+        task.setStatus(status);
+
+        Task updatedTask = taskRepository.save(task);
+
+        return TaskUpdateResponse.builder()
+                .taskId(updatedTask.getTaskId())
+                .title(updatedTask.getTitle())
+                .description(updatedTask.getDescription())
+                .priority(updatedTask.getPriority().getName())
+                .updatedAt(updatedTask.getUpdatedAt())
+                .build();
+    }
+
+    private Task getTaskByIdOrThrow(Long taskId) {
+        return taskRepository.findById(taskId)
+                .orElseThrow(() -> new TaskException(TaskErrorCode.TASK_NOT_FOUND));
+    }
+
 }
