@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly To-Do List</title>
+    <link rel="stylesheet" href="calendar_WG.css">
+</head>
+<body>
+<!-- 홈 버튼 -->
+<a th:href="@{/}" class="home">Home</a>
+
+<!-- 탭 메뉴 -->
+<div class="tabs">
+    <a th:href="@{/daily}"><button>Daily</button></a>
+    <a th:href="@{/weekly}"><button class="active">Weekly</button></a>
+    <a th:href="@{/monthly}"><button>Monthly</button></a>
+</div>
+
+<!-- 메인 컨텐츠 -->
+<div class="container">
+    <div class="section">
+        <h2>Weekly</h2>
+
+        <!-- 진행률 바 -->
+        <div class="progress-container">
+            <div id="progressBar" class="progress-bar" style="width: 0%;"></div>
+            <span id="progressLabel" class="progress-label">0%</span>
+        </div>
+
+        <!-- 주차 선택 박스 -->
+        <div class="week-box">
+            <div th:each="week : ${weeks}"
+                 th:text="${week.label}"
+                 th:classappend="${week.selected} ? 'selected-week' : ''"
+                 class="week-day">
+                Week
+            </div>
+        </div>
+
+        <!-- 할 일 목록 -->
+        <div id="todoList">
+            <div th:each="task : ${tasks}" class="todo-item">
+                <h3 th:text="${task.title}">Task Title</h3>
+                <p th:text="${task.description}">Description of the task goes here.</p>
+                <span class="priority"
+                      th:classappend="${task.priority}"
+                      th:text="${#strings.capitalize(task.priority)}">
+                    High
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="calendar_WG.js"></script>
+<script>
+    // 진행률 업데이트
+    document.addEventListener('DOMContentLoaded', () => {
+        const progressRate = /*[[${progressRate}]]*/ 0; // 백엔드에서 전달되는 값
+        updateProgressBar(progressRate);
+    });
+</script>
+</body>
+</html>
