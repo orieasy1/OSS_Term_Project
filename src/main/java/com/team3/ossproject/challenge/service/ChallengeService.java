@@ -19,7 +19,7 @@ public class ChallengeService {
 
     private final ChallengeRepository challengeRepository;
 
-    public String createChallenge(Long userId, CreateChallengeRequest request){
+    public String createChallenge(CreateChallengeRequest request){
 
         // Duration 변환 (String -> Enum)
         Duration duration = request.getDuration();

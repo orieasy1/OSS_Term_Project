@@ -1,0 +1,82 @@
+/* 전체 페이지 스타일 */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #F1F3F9;
+  font-family: Inter, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* 메인 컨테이너 */
+.container {
+  width: 700px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* 제목 및 입력 필드 스타일 */
+h1, h2 {
+  margin: 20px 0;
+  font-size: 32px;
+  color: #000;
+}
+
+.input-container {
+  margin: 20px 0;
+}
+
+input, select, button {
+  width: 80%;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+/* CREATE 버튼 스타일 */
+button {
+  background-color: #6FD1C5;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #5BAA9D;
+}
+
+/* 셀렉트 박스 스타일 */
+select {
+  cursor: pointer;
+}
+
+/* 홈 버튼 스타일 */
+.home-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #6FD1C5;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.home-button:hover {
+  background-color: #5BAA9D;
+}

@@ -27,6 +27,14 @@ public class SecurityConfig {
                                 "/configuration/**"
                         ).permitAll()
 
+                        // 정적 리소스 접근 허용
+                        .requestMatchers(
+                                "/css/**",
+                                "/js/**",
+                                "/img/**",
+                                "/favicon.ico"
+                        ).permitAll()
+
                         // API 경로 접근 허용
                         .requestMatchers("/api/v1/**").permitAll()
 

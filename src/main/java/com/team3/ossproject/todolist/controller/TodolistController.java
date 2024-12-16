@@ -34,14 +34,14 @@ public class TodolistController {
 
     @PostMapping("/{type}")
     @Operation(summary = "Add To-do Task")
-    public ResponseEntity<ApiResponse<TaskCreateResponse>> createTask(
+    public String createTask(
             @PathVariable String type,
-            @RequestBody TaskCreateRequest request) {
-
+            @RequestBody TaskCreateRequest request,
+            Model model) {
         Type enumtype = Type.fromName(type);
         TaskCreateResponse response = todolistService.createTask(enumtype, request);
-
-        return ResponseEntity.ok(ApiResponse.success(response));
+        model.addAttribute("task", response);
+        return "redirect:/api/v1/todolist/" + type; // 성공 시 modal 페이지 반환
     }
 
 

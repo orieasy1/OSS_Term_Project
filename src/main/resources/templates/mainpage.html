@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time-To-Do Main</title>
-    <link rel="stylesheet" href="@{/css/mainpage.css}">
+    <link rel="stylesheet" th:href="@{/css/mainpage.css}">
+
 </head>
 <body>
 <!-- 메인 컨테이너 -->
@@ -25,8 +26,8 @@
     <!-- 오른쪽 섹션: 버튼 -->
     <div class="right-section">
         <div class="button-container">
-            <button th:onclick="|window.location.href='@{/api/v1/todolist/DAY}'|">To-Do Mode ✔️</button>
-            <button th:onclick="|window.location.href='@{/api/v1/challenges}'|">Challenge Mode 🎯</button>
+            <button th:onclick="|window.location.href='@{/api/v1/todolist/page/DAY}'|">To-Do Mode ✔️</button>
+            <button th:onclick="|window.location.href='@{/api/v1/challenges/create}'|">Challenge Mode 🎯</button>
             <button th:onclick="|window.location.href='@{/calendar}'|">Calendar 📆</button>
             <button th:onclick="|window.location.href='@{/performance}'|">Performance Analysis 📊</button>
         </div>

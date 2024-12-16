@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/challengestyles.css"> <!-- CSS 연결 -->
+  <title>Challenge</title>
+</head>
+<body>
+  <!-- 홈 버튼 -->
+  <a href="/" class="home-button" th:if="${homeConnected}" th:onclick="'location.href=' + @{/}'">Home</a>
+  <a href="#" class="home-button" th:unless="${homeConnected}" onclick="alert('홈으로 연결되지 않았습니다!'); return false;">Home</a>
+
+  <!-- 메인 컨테이너 -->
+  <div class="container">
+    <h1>Challenge</h1>
+
+    <!-- 챌린지 정보 입력 -->
+    <h2>What kind of challenge?</h2>
+    <div class="input-container">
+      <input type="text" id="challengeTitle" placeholder="Enter your challenge title" th:value="${challenge?.title}">
+      <input type="text" id="challengeDetails" placeholder="What kind of challenge?" th:value="${challenge?.details}">
+    </div>
+
+    <!-- 챌린지 기간 입력 -->
+    <h2>How long is the challenge?</h2>
+    <div class="input-container">
+      <input type="text" id="startDate" placeholder="START : YYYY/MM/DD" th:value="${challenge?.startDate}">
+      <select id="duration">
+        <option value="D-50" th:selected="${challenge?.duration == 'D-50'}">D-50</option>
+        <option value="D-100" th:selected="${challenge?.duration == 'D-100'}">D-100</option>
+      </select>
+    </div>
+
+    <!-- CREATE 버튼 -->
+    <button id="createButton">CREATE</button>
+  </div>
+
+  <!-- JavaScript 연결 -->
+  <script th:src="@{/js/script.js}"></script>
+</body>
+</html>
