@@ -1,0 +1,138 @@
+/* General Reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #F1F3F9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Home 버튼 */
+.home-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #6FD1C5;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+  background-color: #5BAA9D;
+}
+
+/* 탭 버튼 */
+.tabs {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.tab-button {
+  background-color: #FFFFFF;
+  border: 2px solid #DDDDDD;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333333;
+  transition: all 0.3s ease;
+}
+
+.tab-button.active {
+  background-color: #6FD1C5;
+  color: white;
+  border-color: #6FD1C5;
+}
+
+.tab-button:hover {
+  background-color: #E8F5E9;
+  border-color: #6FD1C5;
+  color: #6FD1C5;
+}
+
+/* 메인 컨테이너 */
+.container {
+  background-color: #FFFFFF;
+  width: 90%;
+  max-width: 600px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+  margin: 80px auto;
+  text-align: center;
+}
+
+/* 로고 */
+.logo img {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+/* 제목 */
+h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* 폼 섹션 */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.task-section {
+  text-align: left;
+  margin: 10px 0;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+textarea {
+  resize: none;
+  height: 80px;
+}
+
+/* Save 버튼 */
+.save-button {
+  background-color: #6FD1C5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.save-button:hover {
+  background-color: #5BAA9D;
+}
