@@ -1,28 +1,52 @@
 package com.team3.ossproject.challenge.controller;
 
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
+import com.team3.ossproject.challenge.dto.request.CreateChallengeRequest;
+import com.team3.ossproject.challenge.service.ChallengeService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
+@Controller
+@RequestMapping("/api/v1/challenges")
 @RequiredArgsConstructor
-@RestController
-@RequestMapping("/api/v1/challenge")
-@Tag(name = "Challenge Controller", description = "[Challenge] Challenge API")
-
 public class ChallengeController {
-    @PostMapping
-    @Operation(summary = "챌린지 등록")
-    public String addChallenge(){
-        return null;
-    }
+//
+//    private final ChallengeService challengeService;
+//
+//    @GetMapping("/create")
+//    public String getChallengeCreatePage(
+//            @RequestParam(value = "token", required = false) String token,
+//            Model model) {
+//        if (token == null || token.isEmpty()) {
+//            model.addAttribute("error", "토큰이 필요합니다.");
+//            return "error"; // 에러 페이지
+//        }
+//        model.addAttribute("challenge", new CreateChallengeRequest());
+//        model.addAttribute("token", token); // 토큰 추가
+//        return "challenge_create"; // challenge_create.html 반환
+//    }
+//
+//
+//
+//    /**
+//     * 챌린지 등록 처리 (POST)
+//     */
+//    @PostMapping("/create")
+//    public String createChallenge(
+//            CreateChallengeRequest request,
+//            @RequestParam(value = "token") String token,
+//            Model model) {
+//        System.out.println("Duration received: " + request.getDuration()); // 로그로 확인
+//        System.out.println("Title received: " + request.getTitle());
+//        System.out.println("description received: " + request.getTitle());
+//
+//
+//        // 챌린지 생성
+//        String title = challengeService.createChallenge(request);
+//        model.addAttribute("message", title + "Challenge created successfully!");
+//        return "redirect:/api/v1/challenges";
+//    }
+//
 
-    @GetMapping
-    @Operation(summary = "챌린지 조회")
-    public String findChallenge(){
-        return null;
-    }
 }

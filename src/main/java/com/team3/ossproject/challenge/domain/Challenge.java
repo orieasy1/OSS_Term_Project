@@ -1,11 +1,9 @@
 package com.team3.ossproject.challenge.domain;
-
-
-import com.team3.ossproject.user.domain.User;
 import com.team3.ossproject.common.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -26,7 +24,7 @@ public class Challenge extends BaseEntity {
     private String description;
 
     @Column(name = "start_date")
-    private LocalDateTime startDate;
+    private LocalDate startDate;
 
     @Enumerated(EnumType.STRING)
     private Duration duration;
@@ -41,28 +39,25 @@ public class Challenge extends BaseEntity {
     private float progressRate;
 
     @Column(name = "remaining_days", nullable = false)
-    private int remainingDays;
+    private long remainingDays;
 
     @Column(name = "finished_at")
-    private LocalDateTime finishedAt;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="user_id", nullable = false)
-    private User user;
+    private LocalDate finishedAt;
 
     @OneToMany(mappedBy = "challenge")
     private List<ChallengeProcess> processes;
 
     @Builder
-    public Challenge(String title,
-                String description,
-                LocalDateTime startDate,
-                Duration duration,
-                Status status,
-                int count,
-                float progressRate,
-                int remainingDays,
-                LocalDateTime finishedAt) {
+    public Challenge(
+            String title,
+            String description,
+            LocalDate startDate,
+            Duration duration,
+            Status status,
+            int count,
+            float progressRate,
+            long remainingDays,
+            LocalDate finishedAt) {
         this.title = title;
         this.description = description;
         this.duration = duration;

@@ -2,6 +2,8 @@ package com.team3.ossproject.challenge.domain;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.team3.ossproject.challenge.exception.ChallengeErrorCode;
+import com.team3.ossproject.challenge.exception.ChallengeException;
 import lombok.RequiredArgsConstructor;
 
 import java.util.HashMap;
@@ -31,7 +33,7 @@ public enum Duration {
         Duration duration = NAME_TO_ENUM_MAP.get(name);
 
         if (duration == null) {
-            //throw new TaskException(TaskErrorCode.INVALID_DURATION_ENUM);
+            throw new ChallengeException(ChallengeErrorCode.INVALID_CHALLENGE_DURATION);
         }
 
         return duration;

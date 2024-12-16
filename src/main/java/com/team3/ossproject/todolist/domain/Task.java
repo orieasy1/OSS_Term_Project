@@ -1,6 +1,5 @@
 package com.team3.ossproject.todolist.domain;
 
-import com.team3.ossproject.user.domain.User;
 import com.team3.ossproject.common.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
@@ -44,10 +43,6 @@ public class Task extends BaseEntity {
 
     private int year;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="user_id", nullable = false)
-    private User user;
-
     @Builder
     public Task(String title,
                 String description,
@@ -58,8 +53,7 @@ public class Task extends BaseEntity {
                 int day,
                 int week,
                 int month,
-                int year,
-                User user) {
+                int year) {
         this.title = title;
         this.description = description;
         this.type = type;
@@ -70,6 +64,5 @@ public class Task extends BaseEntity {
         this.week = week;
         this.month = month;
         this.year = year;
-        this.user = user;
     }
 }
