@@ -10,10 +10,7 @@ import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+
 
 @RequiredArgsConstructor
 @RestController
@@ -21,15 +18,22 @@ import org.springframework.web.bind.annotation.RestController;
 @Tag(name = "Challenge Controller", description = "[Challenge] Challenge API")
 public class ChallengeController {
 
-    private final ChallengeService challengeService;
+    private final challengeRegis_service challengeService;
 
     @PostMapping
-    @Operation(summary = "Add Challenge")
-    public ResponseEntity<ApiResponse<StringResponseDto>> addChallenge(
-            @RequestBody CreateChallengeRequest request){
+    @Operation(summary = "Create a new challenge")
+    public ResponseEntity<SuccessResponse<challengeRegistration_res>> createChallenge(
+            @RequestBody challengeRegistration request) {
+        challengeRegistration_res response = challengeService.createChallenge(request);
+        return ResponseEntity.ok(SuccessResponse.success(response));
+    }
 
-        String response = "Challenge " + challengeService.createChallenge(request) + " is successfully created!";
-        return ResponseEntity.ok(ApiResponse.success(new StringResponseDto(response)));
+    @GetMapping("/{id}")
+    @Operation(summary = "Get challenge details by ID")
+    public ResponseEntity<SuccessResponse<challengeRegistration_res>> getChallengeById(
+            @PathVariable("id") Long id) {
+        challengeRegistration_res response = challengeService.getChallengeById(id);
+        return ResponseEntity.ok(SuccessResponse.success(response));
     }
 
 
