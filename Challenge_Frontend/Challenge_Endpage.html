@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Jogging Challenge</title>
+    <link rel="stylesheet" href="Challenge_Endpage.css">
+</head>
+<body>
+<!-- Back Button -->
+<header>
+    <button id="backButton" onclick="location.href='Challenge_Details_Check.html'">Back</button>
+</header>
+
+<main>
+    <!-- Header Section -->
+    <div class="header-container">
+        <h2 id="challengeTitle">🏃🏻‍♀️ Jogging everyday</h2>
+        <h1>D - 15</h1>
+        <p class="dates" id="challengeDates">12/11/24 - 31/12/24</p>
+    </div>
+
+    <div class="logo-container">
+        <img src="image-removebg-preview.png" alt="Logo" class="floating-logo">
+    </div>
+
+    <!-- Success Rate Box -->
+    <div class="success-box">
+        <div class="blue-gradient-circle"></div>
+        <p class="challenge-text">
+            Out of <span id="totalDays">50</span> days of challenges,
+        </p>
+        <p class="challenge-text">
+            <span id="completedDays">0</span> days of challenges are successful
+        </p>
+
+        <!-- Success Rate -->
+        <div class="success-text" id="successRate">0.00% success!</div>
+
+        <!-- Conditional Success Message -->
+        <p class="message" id="resultMessage">Fighting!🔥</p>
+    </div>
+</main>
+
+<script src="Challenge_Endpage.js"></script>
+</body>
+</html>

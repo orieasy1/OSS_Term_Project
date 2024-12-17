@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Jogging Challenge</title>
+    <link rel="stylesheet" href="Challenge_Details_Check.css">
+</head>
+<body>
+<!-- Home Button -->
+<header>
+    <button id="homeButton" onclick="location.href='Main_Page.html'">Home</button>
+</header>
+
+<!-- Main Container -->
+<main class="main-container">
+    <!-- Left Section: Challenge Title and D-Day -->
+    <div class="left-section">
+        <h2 id="challengeTitle">🏃🏻‍♀️ Jogging every day</h2>
+        <h1 id="remainingDays">D - 29</h1>
+    </div>
+
+    <!-- Right Section: Challenge Dates -->
+    <div class="right-section">
+        <p>The <span class="challenge-days">50 days</span> challenge</p>
+        <p>from <span class="challenge-dates">2024-11-12</span></p>
+        <p>to <span class="challenge-dates">2024-12-31</span></p>
+    </div>
+</main>
+
+<!-- Challenge Day Boxes -->
+<div class="challenge-container" id="challenge-container">
+    <!-- 50 Days will be dynamically created here -->
+</div>
+
+<!-- Current Success Rate Button -->
+<div class="success-rate-button">
+    <button id="successRateButton">Check Current Success Rate</button>
+</div>
+
+<script src="Challenge_Details_Check.js"></script>
+</body>
+</html>

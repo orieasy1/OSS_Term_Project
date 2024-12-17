@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time-To-Do Main</title>
+    <link rel="stylesheet" href="Main_Page.css">
+</head>
+<body>
+<!-- Main Container -->
+<div class="main-container">
+    <!-- Left Section: Logo and Welcome Message -->
+    <div class="left-section">
+        <div class="main-image-container">
+            <img src="image-removebg-preview.png" alt="Time-To-Do Logo" class="floating-logo">
+        </div>
+        <header>
+            <p class="user-welcome">Hi, ITM Students!</p>
+            <h1 id="main-title" class="fade-in">Welcome to "Time-To-Do!"</h1>
+            <p id="time-to-do" class="small-message">Now, It's your time to do!😁</p>
+        </header>
+    </div>
+
+    <!-- Right Section: Buttons -->
+    <div class="right-section">
+        <div class="button-container">
+            <button th:onclick="|window.location.href='@{/todo}'|">To-Do Mode ✔️</button>
+            <button onclick="location.href='choose_challenge.html'">Challenge Mode 🎯</button>
+            <button th:onclick="|window.location.href='@{/calendar}'|">Calendar 📆</button>
+        </div>
+    </div>
+</div>
+
+<!-- Developer Information -->
+<footer>
+    <p>Developers: Lee Ji Won, Hong Min Ji, Song Seo Ha, Lee So Dam, Lee Ye Eun, Kim Ha Jin</p>
+</footer>
+</body>
+</html>

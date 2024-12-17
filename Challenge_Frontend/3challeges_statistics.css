@@ -1,0 +1,225 @@
+/* 전체 페이지 스타일 */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #F1F3F9;
+    font-family: Inter, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  /* 메인 컨테이너 */
+  .container {
+    width: 700px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 32px;
+    color: #000;
+    margin-bottom: 20px;
+  }
+
+  /* Home 버튼 스타일 */
+  .home-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #6FD1C5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+
+  .home-button:hover {
+    background-color: #5BAA9D;
+  }
+
+  /* 챌린지 리스트 스타일 */
+  .challenge-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .challenge-box {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .challenge-box h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    color: #333;
+  }
+
+  .challenge-box p {
+    margin: 5px 0;
+    color: #555;
+  }
+
+
+/* 공통 버튼 스타일 */
+.edit-button, .delete-button {
+  display: inline-block;
+  width: 80px; /* 버튼의 너비 설정 */
+  height: 40px; /* 버튼의 높이 설정 */
+  padding: 5px 10px; /* 내부 여백 설정 */
+  border: none; /* 테두리 제거 */
+  border-radius: 5px; /* 둥근 테두리 */
+  font-size: 16px; /* 글자 크기 */
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Edit 버튼 스타일 */
+.edit-button {
+  background-color: #FFFF9F; /* 노란색 */
+  color: #333; /* 글자 색상 */
+  transition: background-color 0.3s;
+}
+
+.edit-button:hover {
+  background-color: #8FBC8F; /* hover 시 더 어두운 노란색 */
+}
+
+/* Delete 버튼 스타일 */
+.delete-button {
+  background-color: #E74C3C; /* 빨간색 */
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+  background-color: #C0392B; /* hover 시 더 어두운 빨간색 */
+}
+
+.date-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.date-select {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.date-select label {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.date-select select {
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+  /* Add challenge 버튼 */
+  button {
+    background-color: #6FD1C5;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+
+  button:hover {
+    background-color: #5BAA9D;
+  }
+/* 모달창 스타일 */
+.modal {
+  display: none; /* 초기 상태: 숨김 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  margin: 15% auto;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.close-button {
+  float: right;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #888;
+}
+
+.close-button:hover {
+  color: #333;
+}
+
+/* 입력 필드 스타일 */
+.modal-content input,
+.modal-content select {
+  margin: 10px 0;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.close-button {
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+

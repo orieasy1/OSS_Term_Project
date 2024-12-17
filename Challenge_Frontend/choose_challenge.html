@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Challenge</title>
+  <link rel="stylesheet" href="choose_challenge.css">
+</head>
+<body>
+<!-- Home 버튼 -->
+<a href="Main_Page.html" class="home-button">Home</a>
+
+<!-- 메인 컨테이너 -->
+<div class="container">
+  <h1>Challenge</h1>
+  <h2>Select your challenge</h2>
+  <div class="input-container">
+    <label for="challengeTitle">Challenge:</label>
+    <select id="challengeTitle">
+      <option value="Morning exercise🎾">Morning exercise🎾</option>
+      <option value="Read a book📖">Read a book📖</option>
+      <option value="Study hard✍️">Study hard✍️</option>
+      <option value="Study OSS😊">Study OSS😊</option>
+      <option value="Jogging everyday🏃‍♂️">Jogging everyday🏃‍♂️</option>
+    </select>
+  </div>
+
+  <h2>Select the start date</h2>
+  <div class="date-container">
+    <div class="date-select">
+      <label for="startYear">Year:</label>
+      <select id="startYear">
+        <script>
+          for (let year = 2024; year <= 2030; year++) {
+            document.write(`<option value="${year}">${year}</option>`);
+          }
+        </script>
+      </select>
+    </div>
+    <div class="date-select">
+      <label for="startMonth">Month:</label>
+      <select id="startMonth">
+        <script>
+          for (let month = 1; month <= 12; month++) {
+            document.write(`<option value="${month}">${month}</option>`);
+          }
+        </script>
+      </select>
+    </div>
+    <div class="date-select">
+      <label for="startDay">Day:</label>
+      <select id="startDay">
+        <script>
+          for (let day = 1; day <= 31; day++) {
+            document.write(`<option value="${day}">${day}</option>`);
+          }
+        </script>
+      </select>
+    </div>
+  </div>
+
+  <!-- CREATE 버튼 -->
+  <button id="createButton">CREATE</button>
+</div>
+
+<script src="choose_challenge.js"></script>
+</body>
+</html>

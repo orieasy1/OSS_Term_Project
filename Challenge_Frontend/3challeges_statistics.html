@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Challenges Statistics</title>
+  <link rel="stylesheet" href="3challeges_statistics.css">
+</head>
+<body>
+<!-- Home Button -->
+<a href="Main_Page.html" class="home-button">Home</a>
+
+<div class="container">
+  <h1>Your Challenges</h1>
+  <div id="challengeList" class="challenge-list">
+    <!-- Challenge boxes will be dynamically loaded here -->
+  </div>
+
+  <!-- Buttons -->
+  <button id="addChallengeButton">Add Challenge</button>
+  <button id="checkDetailButton">Check Detail</button>
+</div>
+
+<!-- Edit Modal -->
+<div id="editModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h2>Edit Challenge</h2>
+    <label for="editTitle">Title:</label>
+    <input type="text" id="editTitle">
+
+    <label for="editYear">Year:</label>
+    <select id="editYear"></select>
+
+    <label for="editMonth">Month:</label>
+    <select id="editMonth"></select>
+
+    <label for="editDay">Day:</label>
+    <select id="editDay"></select>
+
+    <button id="saveEditButton">Save</button>
+  </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div id="deleteModal" class="modal">
+  <div class="modal-content">
+    <h2>Are you sure you want to delete?</h2>
+    <button id="confirmDeleteButton">Yes, Delete</button>
+    <button id="cancelDeleteButton">Cancel</button>
+  </div>
+</div>
+
+<script src="3challeges_statistics.js"></script>
+</body>
+</html>
