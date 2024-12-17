@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly To-Do List</title>
+    <link rel="stylesheet" href="calendar_MG.css">
+</head>
+<body>
+<!-- 홈 버튼 -->
+<a href="Main_Page.html" class="home">Home</a>
+
+<!-- 탭 메뉴 -->
+<div class="tabs">
+    <a href="calendar_DG.html"><button>Daily</button></a>
+    <a href="caldendar_WG.html"><button>Weekly</button></a>
+    <a href="calendar_MG.html"><button class="active">Monthly</button></a>
+</div>
+
+<!-- 메인 컨텐츠 -->
+<div class="container">
+    <div class="section">
+        <h2>Monthly</h2>
+        <!-- 진행률 바 -->
+        <div class="progress-container">
+            <div id="progressBar" class="progress-bar"></div>
+            <span id="progressLabel" class="progress-label">0%</span>
+        </div>
+        <div class="month-box" id="monthBox">12</div>
+        <div id="todoList"></div>
+    </div>
+</div>
+
+<script src="calendar_MG.js"></script>
+</body>
+</html>

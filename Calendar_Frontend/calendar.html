@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="calendar.css">
+</head>
+<body>
+<div class="calendar-container">
+    <div class="calendar-header">
+        <!-- 홈 버튼 -->
+        <a href="Main_Page.html" class="home-btn">Home</a>
+
+        <!-- Daily 버튼 -->
+        <a href="calendar_DG.html" class="daily-btn">Daily</a>
+
+        <!-- 월과 연도 표시 -->
+        <div class="month-navigation">
+            <!-- Dec, 2024 클릭 시 이동 -->
+            <a href="calendar_MG.html" id="calendarTitle" class="title-button">Dec, 2024</a>
+            <button id="prevMonth" class="arrow-btn">&lt;</button>
+            <button id="nextMonth" class="arrow-btn">&gt;</button>
+        </div>
+    </div>
+
+    <!-- 주간 버튼 -->
+    <div class="week-buttons">
+        <!-- Weekly Goals 버튼 - WG 페이지로 연결 -->
+        <a href="caldendar_WG.html" class="week-btn">Weekly Goals</a>
+    </div>
+
+    <!-- 달력 테이블 -->
+    <table>
+        <thead>
+        <tr>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+        </tr>
+        </thead>
+        <tbody id="calendarBody">
+        <!-- JS로 동적으로 렌더링 -->
+        </tbody>
+    </table>
+</div>
+<script src="calendar.js"></script>
+</body>
+</html>

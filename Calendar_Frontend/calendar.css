@@ -1,0 +1,163 @@
+/* 전체 페이지 스타일 */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    background-color: #f8f9fc;
+}
+
+/* 메인 컨테이너 */
+.calendar-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* 상단 헤더 */
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.calendar-header .home-btn {
+    margin-right: auto;
+}
+
+.calendar-header .daily-btn {
+    margin-left: auto;
+}
+
+/* 홈 버튼 */
+.home-btn {
+    background-color: #4a90e2;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.home-btn:hover {
+    background-color: #357ABD;
+}
+
+/* Daily 버튼 스타일 */
+.daily-btn {
+    background-color: #ff9f43;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-left: 20px;
+    transition: background-color 0.3s;
+}
+
+.daily-btn:hover {
+    background-color: #e67e22;
+}
+
+/* 월과 연도 표시 */
+.month-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.title-button {
+    background-color: transparent;
+    border: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.arrow-btn {
+    background-color: #4a90e2;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.arrow-btn:hover {
+    background-color: #357ABD;
+}
+
+/* 주간 버튼 */
+.week-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+}
+
+.week-btn {
+    background-color: #dfe6e9;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    color: #333;
+}
+
+.week-btn:hover {
+    background-color: #b2bec3;
+}
+
+/* 달력 테이블 스타일 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    width: 14.28%; /* 7열로 나누기 */
+    height: 100px; /* 셀 높이 조정 */
+    text-align: center;
+    vertical-align: top;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+th {
+    background-color: #4a90e2;
+    color: white;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+td {
+    position: relative;
+    padding: 5px;
+    overflow: hidden;
+}
+
+td a {
+    text-decoration: none;
+    color: #333;
+}
+
+td div {
+    font-size: 16px;
+    margin: 5px 0;
+}
