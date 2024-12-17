@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="calendar.css">
+</head>
+<body>
+<div class="calendar-container">
+    <div class="calendar-header">
+        <!-- 홈 버튼 -->
+        <button id="homeButton" class="home-btn">Home</button>
+        <!-- 월과 년도 표시 -->
+        <div class="month-navigation">
+            <button id="calendarTitle" class="title-button"
+                    th:text="${month} + ', ' + ${year}">Dec, 2024</button>
+            <button id="prevMonth" class="arrow-btn">&lt;</button>
+            <button id="nextMonth" class="arrow-btn">&gt;</button>
+        </div>
+    </div>
+    <!-- 주간 버튼 -->
+    <div class="week-buttons">
+        <div class="week-btn" th:each="week : ${weeks}"
+             th:text="'Week ' + ${week}">Week 1</div>
+    </div>
+    <!-- 달력 테이블 -->
+    <table>
+        <thead>
+        <tr>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+        </tr>
+        </thead>
+        <tbody id="calendarBody">
+        <!-- 타임리프 반복문으로 달력 내용 추가 -->
+        <tr th:each="weekRow : ${calendarRows}">
+            <td th:each="day : ${weekRow}">
+                <div th:text="${day.date}">1</div>
+                <!-- 태그 표시 -->
+                <div class="green-tag" th:if="${day.greenTag > 0}"
+                     th:text="'Green: ' + ${day.greenTag}">Green: 0</div>
+                <div class="red-tag" th:if="${day.redTag > 0}"
+                     th:text="'Red: ' + ${day.redTag}">Red: 0</div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="calendar.js"></script>
+</body>
+</html>
