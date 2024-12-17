@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly To-Do List</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #F1F3F9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+        .home {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #6FD1C5;
+            color: #FFFFFF;
+            padding: 10px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+        .home:hover {
+            background-color: #5BAA9D;
+        }
+        .tabs {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        .tabs button {
+            background-color: #6FD1C5;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            color: #FFFFFF;
+            transition: all 0.3s ease;
+        }
+        .tabs button.active {
+            background-color: #5BAA9D;
+        }
+        .container {
+            background-color: #FFFFFF;
+            width: 90%;
+            max-width: 700px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+            margin-top: 80px;
+            height: calc(100vh - 120px);
+            overflow-y: auto;
+        }
+        h2 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .month-display {
+            font-size: 20px;
+            font-weight: bold;
+            color: #6FD1C5;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .add-btn {
+            background-color: #6FD1C5;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            margin: 0 auto 20px;
+        }
+        .add-btn:hover {
+            background-color: #5BAA9D;
+        }
+        .todo-item {
+            background-color: #FAFAFA;
+            border: 1px solid #EEEEEE;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .checkbox {
+            margin-right: 15px;
+        }
+        .task-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            flex-grow: 1;
+        }
+        .task-content h3 {
+            margin: 0 0 4px;
+            font-size: 16px;
+            color: #424242;
+        }
+        .task-content p {
+            margin: 0;
+            font-size: 14px;
+            color: #757575;
+        }
+        .priority {
+            display: inline-block;
+            margin-top: 5px;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            width: fit-content;
+        }
+        .priority.high {
+            color: #D32F2F;
+            background-color: #FFCDD2;
+        }
+        .priority.medium {
+            color: #F57C00;
+            background-color: #FFE0B2;
+        }
+        .priority.low {
+            color: #388E3C;
+            background-color: #C8E6C9;
+        }
+        .actions {
+            display: flex;
+            gap: 10px;
+        }
+        .action-btn {
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-size: 16px;
+            color: #6FD1C5;
+        }
+        .action-btn:hover {
+            color: #5BAA9D;
+        }
+    </style>
+</head>
+<body>
+<a href="Main_Page.html" class="home">Home</a>
+<div class="tabs">
+    <a href="daily.html"><button>Daily</button></a>
+    <a href="weekly.html"><button>Weekly</button></a>
+    <a href="monthly.html"><button class="active">Monthly</button></a>
+</div>
+<div class="container">
+    <h2>Monthly To-Do List</h2>
+    <div class="month-display" id="current-month"></div>
+    <button class="add-btn" onclick="location.href='to-do-list_registration_monthly.html'">+</button>
+    <div id="task-list"></div>
+</div>
+
+<script>
+    let currentTaskIndex = null;
+    document.addEventListener("DOMContentLoaded", () => {
+        const today = new Date();
+        document.getElementById("current-month").textContent = `${today.getMonth() + 1}`;
+        loadTasks();
+    });
+
+    function loadTasks() {
+        const taskList = document.getElementById("task-list");
+        taskList.innerHTML = "";
+        const tasks = JSON.parse(localStorage.getItem("monthly")) || [];
+
+        tasks.forEach((task, index) => {
+            const taskItem = document.createElement("div");
+            taskItem.classList.add("todo-item");
+            const isChecked = task.completed ? "checked" : "";
+            taskItem.innerHTML = `
+                <label class="checkbox">
+                    <input type="checkbox" onchange="toggleTask(${index})" ${isChecked}>
+                </label>
+                <div class="task-content">
+                    <h3>${task.title}</h3>
+                    <p>${task.description}</p>
+                    <span class="priority ${task.priority.toLowerCase()}">${task.priority}</span>
+                </div>
+                <div class="actions">
+                    <button class="action-btn" onclick="editTask(${index})">✏️</button>
+                    <button class="action-btn" onclick="deleteTask(${index})">🗑️</button>
+                </div>
+            `;
+            if (task.completed) taskItem.style.textDecoration = "line-through";
+            taskList.appendChild(taskItem);
+        });
+    }
+
+    function toggleTask(index) {
+        const tasks = JSON.parse(localStorage.getItem("monthly")) || [];
+        tasks[index].completed = !tasks[index].completed;
+        localStorage.setItem("monthly", JSON.stringify(tasks));
+        loadTasks();
+    }
+
+    function editTask(index) {
+        const tasks = JSON.parse(localStorage.getItem("monthly")) || [];
+        const task = tasks[index];
+        const queryParams = new URLSearchParams({
+            edit: true,
+            index,
+            title: task.title,
+            description: task.description,
+            priority: task.priority,
+            completed: task.completed
+        });
+        location.href = `to-do-list_registration_monthly.html?${queryParams.toString()}`;
+    }
+
+    function deleteTask(index) {
+        const tasks = JSON.parse(localStorage.getItem("monthly")) || [];
+        tasks.splice(index, 1);
+        localStorage.setItem("monthly", JSON.stringify(tasks));
+        loadTasks();
+    }
+</script>
+</body>
+</html>
