@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Page</title>
+    <link rel="stylesheet" href="Challenge_Details_Check.css">
+</head>
+<body>
+<header>
+    <button id="homeButton" th:onclick="|location.href='@{/home}'|">Home</button>
+</header>
+
+<main class="main-container">
+    <div class="left-section">
+        <h2 id="challengeTitle" th:text="${challengeTitle}">Your Challenge</h2>
+        <h1 id="remainingDays" th:text="'D - ' + ${remainingDays}">D - N/A</h1>
+    </div>
+
+    <div class="right-section">
+        <p>
+            The <span class="challenge-days" id="challengeDays" th:text="${totalDays + ' days'}">50 days</span> challenge
+        </p>
+        <p>
+            from <span class="challenge-dates" id="startDate" th:text="${startDate}">N/A</span>
+        </p>
+        <p>
+            to <span class="challenge-dates" id="endDate" th:text="${endDate}">N/A</span>
+        </p>
+    </div>
+</main>
+
+<div class="challenge-container" id="challenge-container">
+    <div th:each="day, status : ${dayStatuses}" class="challenge-box"
+         th:classappend="${status.isCompleted} ? 'checked' : ''"
+         th:text="'DAY ' + ${day}">
+    </div>
+</div>
+
+</body>
+</html>
