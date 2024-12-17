@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time-To-Do Main</title>
+    <link rel="stylesheet" href="Main_Page.css">
+</head>
+<body>
+<div class="main-container">
+    <div class="left-section">
+        <div class="main-image-container">
+            <img th:src="@{/images/main-image.png}" alt="Time-To-Do Logo" class="main-image">
+        </div>
+        <header>
+            <p id="user-welcome" class="user-welcome">Hi, Guest!</p>
+            <h1 id="main-title" class="fade-in">Welcome to "Time-To-Do!"</h1>
+        </header>
+    </div>
+
+    <div class="right-section">
+        <div class="button-container">
+            <button th:onclick="|window.location.href='@{/todo}'|">To-Do Mode ✔️</button>
+            <button th:onclick="|window.location.href='@{/challenge}'|">Challenge Mode 🎯</button>
+            <button th:onclick="|window.location.href='@{/calendar}'|">Calendar 📆</button>
+            <button th:onclick="|window.location.href='@{/performance}'|">Performance Analysis 📊</button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>Developers: Lee Ji Won, Hong Min Ji, Song Seo Ha, Lee So Dam, Lee Ye Eun, Kim Ha Jin</p>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const user = JSON.parse(localStorage.getItem("user")) || { id: "guest", nickname: "Guest" };
+
+        const userWelcomeElement = document.getElementById("user-welcome");
+        userWelcomeElement.textContent = `Hi, ${user.nickname}!`;
+    });
+</script>
+</body>
+</html>
